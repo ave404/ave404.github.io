@@ -63,31 +63,27 @@
 
             .slider:before, .slider:after {
                 position: absolute;
-                font-size: 2rem;
-                align-self: center;
+                font-size: 1.5rem;
+                align-self: end;
+                margin-bottom: -2rem;
             }
 
             .slider:before {
-                content: '⟨';
-                left: 0;
+                content: '-->';
+                left: 50%;
+                margin-left: 0.5rem;
             }
 
             .slider:after {
-                content: '⟩';
-                right: 0;
+                content: '<--';
+                right: 50%;
+                margin-right: 0.5rem;
             }
 
             .slider-item {
                 flex: 0 0 100%;
                 display: flex;
                 flex-direction: column;
-                padding: 0 1rem;
-            }
-
-            img {
-                float: right;
-                height: 400px;
-                width: auto;
             }
         </style>
     </head>
