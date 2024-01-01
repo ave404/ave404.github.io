@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>v40.dev</title>
+
+        <meta name="description" content="Личная страница backend-разработчика ave404">
+        <meta name="keywords" content="ave404, резюме, backend, личный сайт">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://unpkg.com/normalize.css@8.0.1/normalize.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;700" rel="stylesheet">
+
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: 'JetBrains Mono', monospace;
+                font-weight: lighter;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            ul {
+                list-style-type: '- ';
+            }
+
+            a {
+                color: inherit;
+            }
+
+            html, body, .wrapper {
+                width: 100%;
+                height: 100%;
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                width: 70%;
+                flex: 0 0 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                padding: 1rem;
+                position: relative;
+            }
+
+            .slider {
+                display: flex;
+                overflow-x: auto;
+            }
+
+            .slider:before, .slider:after {
+                position: absolute;
+                font-size: 2rem;
+                align-self: center;
+            }
+
+            .slider:before {
+                content: '⟨';
+                left: 0;
+            }
+
+            .slider:after {
+                content: '⟩';
+                right: 0;
+            }
+
+            .slider-item {
+                flex: 0 0 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 0 1rem;
+            }
+
+            img {
+                float: right;
+                height: 400px;
+                width: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <h1>Привет! Я Сергей,<br>backend-разработчик.</h1>
+                <p>Пишу на PHP с марта 2019 года.</p>
+                <ul>
+                    <li>PHP 8, Laravel, Lumen</li>
+                    <li>PostgreSQL, Redis</li>
+                    <li>Linux, Docker, Kubernetes, CI/CD</li>
+                </ul>
+                <p>
+                    Контакты:
+                    <a href="https://t.me/ave404" target="_blank">@ave404</a>,
+                    <a href="mailto:mail_bybs@mail.ru" target="_blank">mail_bybs@mail.ru</a>
+                </p>
+            </div>
+
+            <div class="container">
+                <h2>Опыт работы</h2>
+
+                <div class="slider">
+                    <div class="slider-item">
+                        <header>
+                            <h3>
+                                <a href="https://www.nic.ru/about/" target="_blank">RU-CENTER</a>&nbsp;<span>с февраля 2022</span>
+                            </h3>
+                            <p>Backend-разработчик, Tech Lead</p>
+                        </header>
+                        <p>
+                            Поддержка и развитие сервисов команды WEB: главное API сайта, административная панель,
+                            сервисы услуг, хранения контента, файлов.
+                        </p>
+                        <p>
+                            Реализация бизнес требований, написание тестов (unit, functional), рефакторинг,
+                            ревью кода коллег, подготовка документации. Миграция сервисов в Kubernetes.
+                        </p>
+                        <p>
+                            Межмодульное взаимодействие в т.ч опыт передачи проектов в другую команду с последующим
+                            курированием (на время адаптации новых разработчиков).
+                        </p>
+                        <p>
+                            Также проведение технических собеседований и онбординг новых сотрудников.
+                        </p>
+                    </div>
+
+                    <div class="slider-item">
+                        <header>
+                            <h3>
+                                <a href="https://webpractik.ru/company" target="_blank">Вебпрактик</a>&nbsp;<span>с марта 2019</span>
+                            </h3>
+                            <p>Backend-разработчик</p>
+                        </header>
+                        <p>
+                            Поддержка и развитие проектов компании (заказная разработка)
+                        </p>
+                        <p>
+                            Заказная разработка на PHP7+ с Laravel и Bitrix FW. Основные задачи &mdash; это разработка
+                            REST API, модулей и интеграции внешних систем.
+                        </p>
+                        <p>
+                            Проекты: сайт <a href="https://webpractik.ru/cases/development/pochtabank/" target="_blank">Почта&nbsp;Банка</a>,
+                            платформа фестиваля <a href="https://webpractik.ru/cases/development/rukami/">Rukami</a>,
+                            платформа онлайн-конвертации <a href="https://onlineconvertfree.com/ru/">OnlineConvertFree</a>,
+                            сайты интернет-магазинов и др.
+                        </p>
+                        <p>
+                            Проведение внутреннего
+                            <a href="https://webpractik.github.io/prezentation-bitrix-orm/" target="_blank">доклада по
+                                ORM</a>
+                            (<a href="https://github.com/webpractik/prezentation-bitrix-orm" target="_blank">git</a>).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Образование</h2>
+                <ul>
+                    <li>
+                        <a href="https://slurm.io/" target="_blank">Слёрм</a>. Kubernetes: для разработчиков (+docker,
+                        +мониторинг), 2023
+                    </li>
+                    <li>
+                        <p>
+                            <a href="https://donstu.ru/" target="_blank">ДГТУ</a> 2014 &mdash; 2018.
+                            Бакалавр, Информационные системы и технологии
+                        </p>
+                    </li>
+                    <li>
+                        Конференции и митапы:
+                        <ul>
+                            <li>
+                                Highload++ <a href="https://highload.ru/moscow/2022" target="_blank">2022</a>,
+                                <a href="https://highload.ru/moscow/2023" target="_blank">2023</a>
+                            </li>
+                            <li>
+                                Podlodka TechLead Crew <a href="https://podlodka.io/techcrew" target="_blank">#5</a>
+                            </li>
+                            <li>
+                                Podlodka PHP Crew <a href="https://podlodka.io/phpcrew_1" target="_blank">#1</a>,
+                                <a href="https://podlodka.io/phpcrew_3" target="_blank">#3</a>
+                            </li>
+                            <li>
+                                <a href="https://vk.com/rnd_php" target="_blank">RnD PHP</a> #0, #2, #3, #4, #5, #6
+                            </li>
+                            <li>
+                                RndTechConf <a href="https://rndtech.pro/2021-old" target="_blank">2021</a>
+                            </li>
+                            <li>
+                                Спикер на внутреннем
+                                <a href="https://webpractik.github.io/prezentation-bitrix-orm/" target="_blank">докладе&nbsp;по&nbsp;ORM</a>
+                                (<a href="https://github.com/webpractik/prezentation-bitrix-orm" target="_blank">git</a>),
+                                2021
+                            </li>
+                            <li>
+                                Krasnodar Dev Conf <a href="https://vk.com/krddevconf19" target="_blank">2019</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <h2>Обо мне</h2>
+                <p>
+                    С детства привлекала техника и пайка, нравилась информатика. Пайкой иногда занимаюсь по сей день.
+                    Неравнодушен к компьютерному железу.
+                </p>
+                <p>
+                    Ближе к концу школы увлекся видео монтажом и графикой (спец.эффектами). На первом курсе стал
+                    подрабатывать на фрилансе и позже проработал в местной студии видеографии около года.
+                </p>
+                <p>
+                    Далее постепенно стал углубляться в информационные технологии, к тому же, стали преподавать
+                    html/css, java, php. На четвертом курсе в качестве дипломной работы был небольшой сайт на WordPress.
+                </p>
+                <p>
+                    В марте 2019 устроился контент менеджером с условием роста в PHP-разработчика и пробыл в этой
+                    должности около четырех месяцев. Далее путь PHP Backend-разработчика, который продолжается и сейчас.
+                </p>
+                <p>
+                    Хобби: люблю природу и много ходить, игры (компьютерные или настольные), научпоп, митапы -
+                    в т.ч проводил свой митап внутри компании по новой ORM.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
