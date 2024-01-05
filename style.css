@@ -1,0 +1,97 @@
+:root {
+    --maxm: 5rem;
+    --smallm: 1rem;
+    --tinym: 0.5rem;
+    --border: 1px;
+
+    --grayc: #121212;
+    --whitec: #eee;
+}
+
+html {
+    color: var(--textc);
+    background-color: var(--bgc);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: lighter;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    text-align: center;
+    margin: var(--maxm) 0;
+}
+
+ul {
+    list-style-type: '- ';
+}
+
+a {
+    color: inherit;
+}
+
+.wrapper {
+    max-width: 70vw;
+    margin: var(--maxm) auto;
+    padding: 0 var(--smallm);
+}
+
+@media only screen and (max-width: 480px) {
+    .wrapper {
+        max-width: 90vw;
+    }
+}
+
+.photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #D34E3D;
+}
+
+.timeline {
+    border-left: 1px solid var(--textc);
+    padding: 0 var(--smallm);
+}
+
+.timeline-item {
+    margin-bottom: var(--smallm);
+}
+
+.timeline-item:before {
+    --size: 1.2rem;
+
+    content: '';
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    border: var(--border) solid var(--textc);
+    border-radius: 50%;
+    background-color: var(--bgc);
+
+    float: left;
+    margin-left: calc(-1 * (var(--size) + 0.1rem) / 2 - var(--smallm) - var(--border));
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#theme {
+    fill: var(--textc);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 25px color-mix(in srgb, var(--textc) 50%, transparent);
+    opacity: 25%;
+    float: right;
+}

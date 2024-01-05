@@ -1,0 +1,4 @@
+:root {
+    --textc: var(--whitec);
+    --bgc: var(--grayc);
+}

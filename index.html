@@ -10,115 +10,19 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="https://unpkg.com/normalize.css@8.0.1/normalize.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;700" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;700">
 
-        <style>
-            :root {
-                --maxm: 5rem;
-                --smallm: 1rem;
-
-                --grayc: #121212;
-                --whitec: #eee;
-                --border: 1px;
-            }
-
-            @media (prefers-color-scheme: light) {
-                :root {
-                    --textc: var(--grayc);
-                    --bgc: var(--whitec);
-                }
-            }
-
-            @media (prefers-color-scheme: dark) {
-                :root {
-                    --textc: var(--whitec);
-                    --bgc: var(--grayc);
-                }
-            }
-
-            html {
-                color: var(--textc);
-                background-color: var(--bgc);
-            }
-
-            * {
-                box-sizing: border-box;
-                font-family: 'JetBrains Mono', monospace;
-                font-weight: lighter;
-            }
-
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            h2 {
-                text-align: center;
-                margin: var(--maxm) 0;
-            }
-
-            ul {
-                list-style-type: '- ';
-            }
-
-            a {
-                color: inherit;
-            }
-
-            .wrapper {
-                max-width: 70vw;
-                margin: var(--maxm) auto;
-                padding: 0 var(--smallm);
-            }
-            
-            @media only screen and (max-width: 480px) {
-                .wrapper {
-                    max-width: 90vw;
-                }
-            }
-
-            .photo {
-                width: 300px;
-                height: 300px;
-                object-fit: cover;
-                border-radius: 50%;
-                border: 1px solid #D34E3D;
-            }
-
-            .timeline {
-                border-left: 1px solid var(--textc);
-                padding: 0 var(--smallm);
-            }
-
-            .timeline-item {
-                margin-bottom: var(--smallm);
-            }
-
-            .timeline-item:before {
-                --size: 1.2rem;
-
-                content: '';
-                display: inline-block;
-                width: var(--size);
-                height: var(--size);
-                border: var(--border) solid var(--textc);
-                border-radius: 50%;
-                background-color: var(--bgc);
-
-                float: left;
-                margin-left: calc(-1 * (var(--size) + 0.1rem) / 2 - var(--smallm) - var(--border));
-            }
-
-            .content {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" media="(prefers-color-scheme: light)" id="light" href="light.css">
+        <link rel="stylesheet" media="(prefers-color-scheme: dark)" id="dark" href="dark.css">
     </head>
     <body>
         <div class="wrapper">
+            <svg id="theme" width="2rem" height="2rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"></path>
+            </svg>
+
             <div class="container">
                 <div class="content">
                     <img class="photo" src="photo.jpg" alt="photo">
@@ -354,5 +258,26 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            window.matchMedia('(prefers-color-scheme: dark)').onchange = (event) => {
+                if (event.media !== document.getElementById('dark').media) {
+                    switchTheme()
+                }
+            }
+
+            document.getElementById('theme').onclick = () => switchTheme()
+
+            function switchTheme () {
+                const light = document.getElementById('light')
+                const dark = document.getElementById('dark')
+
+                const lightMedia = light.media;
+                const darkMedia = dark.media;
+
+                light.media = darkMedia
+                dark.media = lightMedia
+            }
+        </script>
     </body>
 </html>
